@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<menus>
+ <menu type="sub">
+ <title>Einstellung</title>
+  <menu type="radio" >
+  <title>Sim. Mode</title>
+  </menu>
+
+  <menu type="sub">
+  <title>Sim. Opt</title>
+     <menu type="radio" variable="auf_ab" >
+     <title>Test1 sim</title>
+     <item val="1">AUF</item>
+     <item val="2">AB</item>
+     </menu>
+     <menu type="radio">
+     <title>Test2 sim</title>
+     </menu>
+     <menu type="check">
+     <title>Test3 sim</title>
+     </menu>
+  </menu>
+ </menu>
+ <menu type="sub">
+ <title>Mode</title>
+  <menu type="check" variable="menu" >
+  <title>Test1 mode</title>
+  <item val="4">Test1 check1</item>
+   <item val="5">Test1 check2</item>
+   <item val="5">Test1 check3</item>
+  </menu>
+  <menu type="radio" variable="mode">
+  <title >Test2 mode</title>
+   <item val="4">Test2 radio1</item>
+   <item val="5">Test2 radio2</item>
+   <item val="5">Test2 radio3</item>
+  </menu>
+  <menu type="radio">
+  <title>Test3 mode</title>
+  </menu>
+  <menu type="variable" variable="mode">
+  <title>Test3 mode</title>
+  </menu>
+ </menu>
+ 
+<menu type="exit" >
+ <title>Exit</title>
+ </menu>
+</menus>

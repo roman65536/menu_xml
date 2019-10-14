@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+
+<menus>
+ <menu type="radio" variable="mode">
+ <title>Mode</title>
+ <item val="1">Stern Sim.</item>
+ <item val="2">Alle</item>
+ <item val="3">Nacht</item>
+ <item val="4">Tag</item>
+ </menu>
+
+ <menu type="sub">
+ <title>Simulation</title>
+  <menu type="radio" variable="ab_auf">
+   <title>Auf-/Abgang</title>
+   <item val="-1">Ab</item>
+   <item val="1">Auf</item>
+  </menu>
+  <menu type="radio" variable="auto_v">
+    <title>Auto Mode</title>
+    <item val="1">Auto</item>
+    <item val="0">Manual</item>
+   </menu>
+ <menu type="change" min="0" max="100" variable="auto_v">
+    <title>Auto Mode</title>
+ </menu>
+</menu>
+
+<menu type="check" variable="auto_v">
+ <title>CHECK</title>
+ <item val="1">Auto Update</item> 
+ <item val="2">FFT</item> 
+ <item val="4">SCOPE</item> 
+
+<menu type="exit" >
+ <title>Exit</title>
+ </menu>
+
+
+</menus>
