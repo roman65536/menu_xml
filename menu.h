@@ -8,7 +8,8 @@
 //  [Auto Mode] type [radio]
 //  [Auto Mode] type [change]
 // [CHECK] type [check]
-//  [Exit] type [exit]
+// [Function] type [function]
+// [Exit] type [exit]
  Menu configuration as defined */
 
 
@@ -48,8 +49,8 @@ char menu_text_4[] PROGMEM="Auf-/Abgang"; /*forward declaration **Auf-/Abgang** 
 char menu_text_5[] PROGMEM="Auto Mode"; /*forward declaration **Auto Mode** */ 
 char menu_text_6[] PROGMEM="Auto Mode"; /*forward declaration **Auto Mode** */ 
 char menu_text_7[] PROGMEM="CHECK"; /*forward declaration **CHECK** */ 
-char menu_text_8[] PROGMEM="Exit"; /*forward declaration **Exit** */ 
-char menu_text_9[] PROGMEM="<<BACK"; /*forward declaration **<<BACK** */ 
+char menu_text_8[] PROGMEM="Function"; /*forward declaration **Function** */ 
+char menu_text_9[] PROGMEM="Exit"; /*forward declaration **Exit** */ 
 char menu_text_10[] PROGMEM="<<BACK"; /*forward declaration **<<BACK** */ 
 struct menu_item menu_item_2; /*forward declaration **Mode** */ 
 struct menu_item menu_item_3; /*forward declaration **Simulation** */ 
@@ -57,8 +58,8 @@ struct menu_item menu_item_4; /*forward declaration **Auf-/Abgang** */
 struct menu_item menu_item_5; /*forward declaration **Auto Mode** */ 
 struct menu_item menu_item_6; /*forward declaration **Auto Mode** */ 
 struct menu_item menu_item_7; /*forward declaration **CHECK** */ 
-struct menu_item menu_item_8; /*forward declaration **Exit** */ 
-struct menu_item menu_item_9; /*forward declaration **<<BACK** */ 
+struct menu_item menu_item_8; /*forward declaration **Function** */ 
+struct menu_item menu_item_9; /*forward declaration **Exit** */ 
 struct menu_item menu_item_10; /*forward declaration **<<BACK** */ 
 
 
@@ -93,7 +94,7 @@ struct menu_item menu_item_3 PROGMEM = {
 struct menu_item menu_item_4 PROGMEM = {
  .title=menu_text_4,
  .next=&menu_item_5,
- .prev=&menu_item_9,
+ .prev=&menu_item_10,
  .up=&menu_item_3,
  .type=RADIO_MENU,
  .u.item.cnt=2,
@@ -134,7 +135,7 @@ struct menu_item menu_item_6 PROGMEM = {
 /* Menu definition for CHECK */
 struct menu_item menu_item_7 PROGMEM = {
  .title=menu_text_7,
- .next=0,
+ .next=&menu_item_8,
  .prev=&menu_item_3,
  .up=0,
  .type=CHECK_MENU,
@@ -145,24 +146,25 @@ struct menu_item menu_item_7 PROGMEM = {
 
 
 
-/* Menu definition for Exit */
+/* Menu definition for Function */
 struct menu_item menu_item_8 PROGMEM = {
  .title=menu_text_8,
- .next=0,
- .prev=&menu_item_10,
- .up=&menu_item_7,
- .type=EXIT_MENU,
+ .next=&menu_item_9,
+ .prev=&menu_item_7,
+ .up=0,
+ .type=FUNC_MENU,
+ .u.func=func_ls,
 };
 
 
 
-/* Menu definition for <<BACK */
+/* Menu definition for Exit */
 struct menu_item menu_item_9 PROGMEM = {
  .title=menu_text_9,
- .next=&menu_item_4,
- .prev=0,
- .up=&menu_item_3,
- .type=BACK_MENU,
+ .next=0,
+ .prev=&menu_item_8,
+ .up=0,
+ .type=EXIT_MENU,
 };
 
 
@@ -170,8 +172,8 @@ struct menu_item menu_item_9 PROGMEM = {
 /* Menu definition for <<BACK */
 struct menu_item menu_item_10 PROGMEM = {
  .title=menu_text_10,
- .next=&menu_item_8,
+ .next=&menu_item_4,
  .prev=0,
- .up=&menu_item_7,
+ .up=&menu_item_3,
  .type=BACK_MENU,
 };

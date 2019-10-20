@@ -76,7 +76,11 @@ struct menu_item *glb_ptr;
 
 int func_ls()
 {
-printf("ls");
+   move(1,1);
+   printw(" called %s ",__FUNCTION__);
+   refresh();
+   sleep(1);
+//system("ls");
 }
 
 int func_edit()

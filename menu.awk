@@ -1,4 +1,4 @@
-@load xml
+#@load xml
 #back_arg if set to 1, generator creates a "Back" within sub menues
 #
 
@@ -59,7 +59,7 @@ XMLENDELEM  && XMLPATH ~ /menu$/ {
 
 XMLSTARTELEM && XMLPATH ~ /menu$/ {
     tmp=cur_idx;
-#    printf("cur %d ",tmp);
+ #    printf("cur %d ",tmp);
 cur_idx=get_idx();
 #    printf("cur %d ",tmp);
 #menu_next[tmp]=cur_idx;
@@ -69,6 +69,8 @@ menu_type[cur_idx]=XMLATTR["type"]
 menu_variable[cur_idx]=XMLATTR["variable"];
 menu_min[cur_idx]=XMLATTR["min"];
 menu_max[cur_idx]=XMLATTR["max"];
+menu_func[cur_idx]=XMLATTR["function"];
+menu_args[cur_idx]=XMLATTR["args"];
 menu_subs[par]= menu_subs[par] "  " cur_idx;
 #printf("some Menu starts %d %d\n",cur_idx,depth);
 item_cnt++; item_idx=0;
@@ -279,6 +281,12 @@ function print_menus_c(x, z , a_t,cnt,idx,b)
 		printf(" .u.cval.val=&%s,\n", menu_variable[a_t]);
 		printf(" .u.cval.min=%s,\n", menu_min[a_t]);
 		printf(" .u.cval.max=%s,\n", menu_max[a_t]);
+	}
+	if(menu_type[a_t] ~ /function/ ) {
+	        printf(" .type=FUNC_MENU,\n");
+	        printf(" .u.func=%s,\n",menu_func[a_t]);
+		if(menu_args[a_t])
+		printf(" .u.val=%s,\n",menu_args[a_t]);
 	}
 	printf("};\n");
     }

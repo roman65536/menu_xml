@@ -31,6 +31,11 @@
  <item val="1">Auto Update</item> 
  <item val="2">FFT</item> 
  <item val="4">SCOPE</item> 
+</menu>
+
+<menu type="function" function="func_ls" >
+ 	<title>Function</title>
+</menu>
 
 <menu type="exit" >
  <title>Exit</title>
